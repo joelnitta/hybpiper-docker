@@ -1,3 +1,3 @@
 # hybpiper-docker
 
-This repo houses a dockerfile for running HybPiper with Python 3.
+This repo houses a dockerfile for running [HybPiper](https://github.com/mossmatters/HybPiper) with Python 3.
