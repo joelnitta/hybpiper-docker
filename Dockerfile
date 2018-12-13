@@ -29,10 +29,10 @@ RUN wget http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz \
 
 ENV PATH="$PATH:/apps/SPAdes-3.13.0-Linux/bin/"
 
-WORKDIR /home
-
 RUN git clone https://github.com/mossmatters/HybPiper.git
 
-ENV PATH="$PATH:/home/HybPiper/"
+ENV PATH="$PATH:/apps/HybPiper/"
+
+WORKDIR /home
 
 ENTRYPOINT /bin/bash
