@@ -33,4 +33,6 @@ WORKDIR /home
 
 RUN git clone https://github.com/mossmatters/HybPiper.git
 
+ENV PATH="$PATH:/home/HybPiper/"
+
 ENTRYPOINT /bin/bash
