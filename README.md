@@ -18,19 +18,22 @@ Launch the container:
 docker run --rm -it joelnitta/hybpiper
 ```
 
+You should now be inside the container, in the `/home` directory.
+
+All HybPiper scripts have been added to `$PATH`, so you can call them directly from any directory.
+
 Check that all dependencies are installed:
 
 ```
-cd /apps/HybPiper
-python reads_first.py --check-depend
+reads_first.py --check-depend
 ```
 
 Run the [HybPiper tutorial](https://github.com/mossmatters/HybPiper/wiki/Tutorial):
 
 ```
-cd test_dataset
+cd /apps/HybPiper/test_dataset
 tar -zxvf test_reads.fastq.tar.gz
-../reads_first.py -b test_targets.fasta -r NZ281_R*_test.fastq --prefix NZ281 --bwa
+reads_first.py -b test_targets.fasta -r NZ281_R*_test.fastq --prefix NZ281 --bwa
 
 ...
 ```
@@ -44,3 +47,5 @@ For example, mount `/working/dir` containing `test_targets.fasta`, `NZ281_R1_tes
 ```
 docker run --rm --entrypoint reads_first.py -v /working/dir:/home joelnitta/hybpiper -b test_targets.fasta -r NZ281_R*_test.fastq --prefix NZ281 --bwa
 ```
+
+To run a different HybPiper script, change the script name after `--entrypoint` and provide arguments to that script after `joelnitta/hybpiper`. Note that any filename arguments must have their paths relative to the working directory.
