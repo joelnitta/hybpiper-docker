@@ -30,7 +30,7 @@ RUN wget http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz \
 ENV PATH="$PATH:/apps/SPAdes-3.13.0-Linux/bin/"
 
 RUN git clone https://github.com/joelnitta/HybPiper.git \
-  && chmod +x *.py
+  && chmod +x /apps/HybPiper/*.py
 
 ENV PATH="$PATH:/apps/HybPiper/"
 
