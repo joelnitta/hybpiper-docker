@@ -29,8 +29,11 @@ RUN wget http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz \
 
 ENV PATH="$PATH:/apps/SPAdes-3.13.0-Linux/bin/"
 
+# Clone hybpiper and checkout most recent commit at time of building docker image
 RUN git clone https://github.com/joelnitta/HybPiper.git \
-  && chmod +x /apps/HybPiper/*.py
+  && cd HybPiper \
+  && git checkout 58907ae6366f7fdbdf548486adee120d6e54ed21 \
+  && chmod +x *.py
 
 ENV PATH="$PATH:/apps/HybPiper/"
 
